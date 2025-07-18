@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    background-color: #f9fafb;
+    color: #111827;
+    transition: background 0.2s, color 0.2s;
+  }
+  body.dark {
+    background-color: #18181b;
+    color: #f3f4f6;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: #2563eb;
+    color: white;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 16px;
+    transition: all 0.2s;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  .btn-primary:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  .dark .btn-primary {
+    background-color: #3b82f6;
+    color: #18181b;
+  }
+  .btn-secondary {
+    background-color: white;
+    color: #374151;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  .btn-secondary:hover {
+    background-color: #f9fafb;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  .dark .btn-secondary {
+    background-color: #27272a;
+    color: #f3f4f6;
+    border: 1px solid #52525b;
+  }
+  .card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  .dark .card {
+    background-color: #23232a;
+    color: #f3f4f6;
+  }
+  .vendor-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  @media (min-width: 640px) {
+    .vendor-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .vendor-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (min-width: 1280px) {
+    .vendor-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  @media (min-width: 1536px) {
+    .vendor-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
+
+.hero-section {
+  background: linear-gradient(to bottom right, #f9fafb, #dbeafe);
+  transition: background 0.2s;
+}
+.dark .hero-section {
+  background: linear-gradient(to bottom right, #18181b, #23232a);
+}
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+.hero-banner {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+.hero-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 16px;
+  transition: color 0.2s;
+}
+.dark .hero-title {
+  color: #f3f4f6;
+}
+.hero-subtitle {
+  font-size: 20px;
+  color: #4b5563;
+  margin-bottom: 32px;
+  max-width: 512px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: color 0.2s;
+}
+.dark .hero-subtitle {
+  color: #d1d5db;
+}
+.vendors-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+.vendors-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.vendors-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #111827;
+  transition: color 0.2s;
+}
+.dark .vendors-title {
+  color: #f3f4f6;
+}
+.vendors-count {
+  color: #4b5563;
+  transition: color 0.2s;
+}
+.dark .vendors-count {
+  color: #d1d5db;
+}
+.vendor-badge {
+  background-color: rgba(255,255,255,0.9);
+  color: #374151;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  transition: background 0.2s, color 0.2s;
+}
+.dark .vendor-badge {
+  background-color: rgba(39,39,42,0.9);
+  color: #f3f4f6;
+}
+.vendor-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+  transition: color 0.2s;
+}
+.dark .vendor-name {
+  color: #f3f4f6;
+}
+.vendor-tagline {
+  color: #4b5563;
+  font-size: 14px;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.2s;
+}
+.dark .vendor-tagline {
+  color: #d1d5db;
+}
+.vendor-rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.vendor-rating {
+  display: flex;
+  align-items: center;
+  color: #6b7280;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+.dark .vendor-rating {
+  color: #a1a1aa;
+}
